@@ -37,3 +37,12 @@
 | `/contact/` | 100 | 100 | 100 | 100 |
 
 First run scored Accessibility 96 (`link-in-text-block`); fixed as noted above.
+
+### Deploy (2026-11-15)
+- PR #2 (CI green on PHP 8.2) squash-merged. The Node.js auto-deploy built `main` and failed (no package.json); the old placeholder stayed live.
+- `hosting_deploy` with `type: static` refused: the website is registered as Node.js. Deployed `main` as an archive (`hosting_websites_deploy-static-site-archive`). The site returned the intended fail-closed 500 until the config was uploaded and moved out of `public_html` on the next request.
+- Database `u742794872_lodgingeo` created; the schema self-migrated on first use.
+- PHP switched 8.3 → 8.5; cache cleared; Node.js Git auto-deployment removed.
+- PR #3 added `tests/live_check.php` and the maintenance hook; redeployed by archive.
+- Live forms tested with `maher+test-*@lodgingeo.com`, rows verified and then erased; error log empty. IndexNow ping: HTTP 202.
+- Hostinger upload credentials expire within a few hours; generate new ones for each upload.
