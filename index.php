@@ -8,6 +8,9 @@ declare(strict_types=1);
 require __DIR__ . '/inc/bootstrap.php';
 require ROOT . '/inc/routes.php';
 require ROOT . '/inc/render.php';
+require ROOT . '/inc/maintenance.php';
+
+run_maintenance();
 
 $path   = request_path();
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');

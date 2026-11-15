@@ -59,4 +59,22 @@ python tools/build_data.py --check  # CI: fail if committed data/*.json are stal
 
 ## Deploy
 
-Branch → pull request → CI → merge to `main`. Hostinger's Git auto-deploy publishes `main` to `public_html` on every push. Clear the Hostinger cache after each deploy and run the checks in `docs/LAUNCH_REPORT.md`.
+Branch → pull request → CI → merge to `main` → deploy → `php tests/live_check.php`.
+
+The Hostinger website was first created as a Node.js app, and Hostinger cannot switch a Node.js website to PHP Git auto-deploy through its API. Until the site type is changed in hPanel, `main` is deployed as an archive:
+
+```bash
+git archive --format=zip -o site_$(date -u +%Y%m%d_%H%M%S).zip HEAD
+```
+
+Upload it as `public_html/site.zip` (Hostinger file upload, TUS) and run `hosting_websites_deploy-static-site-archive` with `archive_path: "site.zip"`, then clear the cache (`hosting_cache_clear`). The server config lives outside `public_html`, so deploys never touch it.
+
+## Maintenance jobs
+
+To look up or erase a person's form submissions (GDPR requests, test cleanup), upload `public_html/.lodgingeo-maintenance.json`:
+
+```json
+{"lookup": ["name@example.com"], "erase": ["name@example.com"], "error_log_tail": 50}
+```
+
+The next request runs it once and deletes it; the result is written to `storage/maintenance-report.json` (denied over HTTP). `{"clear_report": true}` removes the report.

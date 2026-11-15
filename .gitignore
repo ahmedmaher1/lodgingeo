@@ -1,6 +1,8 @@
 # Server-only config and runtime files never go in Git.
 lodgingeo-config.php
 .lodgingeo-config.incoming.php
+.lodgingeo-maintenance.json
+/storage/maintenance-report.json
 .env
 .env.*
 *.sqlite

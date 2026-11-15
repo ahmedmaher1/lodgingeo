@@ -18,7 +18,7 @@ file_put_contents("$tmp/config.php", '<?php return ' . var_export([
     'ENV' => 'testing', 'DB_DSN' => "sqlite:$tmp/test.sqlite", 'MAIL_TRANSPORT' => 'log', 'MAIL_LOG' => "$tmp/mail.log",
     'ERROR_LOG' => "$tmp/error.log", 'OWNER_NOTIFY_EMAIL' => 'owner@example.com', 'IP_SALT' => 'test-salt', 'APP_SECRET' => 'test-secret',
     'WHATSAPP_NUMBER' => $fakeWa, 'CHECK_DNS' => false, 'SAMPLE_DIR' => "$tmp/samples", 'RATE_LIMIT_IP_HOUR' => 50,
-    'MIN_SUBMIT_SECONDS' => 3,
+    'MIN_SUBMIT_SECONDS' => 3, 'MAINTENANCE_JOB' => "$tmp/job.json", 'MAINTENANCE_REPORT' => "$tmp/report.json",
 ], true) . ';');
 
 $fails = 0;
@@ -339,6 +339,16 @@ sleep(3);
 [$st, $h] = req('POST', '/contact-submit/', $s + ['name' => 'Short Form', 'email' => 's@example.com', 'message' => 'Hello']);
 ok($st === 303 && ($h['location'] ?? '') === '/?sent=1#contact', 'home short contact form works');
 ok(count_rows('messages') === 2, 'short form stores a message');
+
+// ---------------------------------------------------------------- maintenance hook (lookup + erase)
+file_put_contents("$tmp/job.json", json_encode(['lookup' => ['s@example.com'], 'erase' => ['s@example.com']]));
+req('GET', '/faq/');
+$rep = json_decode((string) @file_get_contents("$tmp/report.json"), true);
+ok(!is_file("$tmp/job.json"), 'maintenance job file is consumed');
+ok(count($rep['lookup']['s@example.com']['messages'] ?? []) === 1 && ($rep['erased']['s@example.com']['messages'] ?? 0) === 1, 'maintenance lookup and erase work');
+ok(count_rows('messages') === 1, 'erased message is gone');
+[$st] = req('GET', '/.lodgingeo-maintenance.json');
+ok(in_array($st, [403, 404], true), 'maintenance job path is denied');
 
 echo "\n$passes passed, $fails failed\n";
 exit($fails > 0 ? 1 : 0);
