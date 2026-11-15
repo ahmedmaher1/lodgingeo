@@ -73,7 +73,7 @@ Plus: http → https, www → apex, `/index.php` → `/`, trailing slash on ever
 
 ## Decisions I made where the brief was silent or did not match reality
 
-1. **Hostinger site type.** The site had been created as a Node.js app, and Hostinger's API cannot switch a Node.js site to PHP Git auto-deploy (`hosting_deploy` refuses `type: static` on it). I deployed `main` as an archive into `public_html` instead, which replaced the Node proxy `.htaccess` so LiteSpeed serves PHP. I removed the Node.js Git auto-deployment, because every push was starting a failing Node build. **Deploys are by archive until the site type is changed** (see "What I need from you").
+1. **Hostinger site type.** The site had been created as a Node.js app, and Hostinger's API cannot switch a Node.js site to PHP Git auto-deploy. With your approval, I backed up the form data (empty), deleted the website entry and recreated it as a regular PHP website on the same plan. The database, SSL certificate and CDN survived. Git auto-deploy is now on for `main` (see the update below).
 2. **Tag push refused.** This session's Git proxy refuses tag pushes, so the pre-rebuild commit is on branch `archive/pre-rebuild-2026-11` rather than tag `pre-rebuild-2026-11`.
 3. **Config outside the web root.** Uploads only land inside `public_html`, so the config was uploaded as a denied dotfile and moved one level up by the app on its first request. It now sits at `/home/u742794872/domains/lodgingeo.com/lodgingeo-config.php`.
 4. **Email transport.** No Hostinger mail order exists and the MX points to Google, so no Hostinger mailbox could be created. Mail goes out through PHP `mail()` on the hosting server for now (stop point 2 below).
@@ -85,16 +85,18 @@ Plus: http → https, www → apex, `/index.php` → `/`, trailing slash on ever
 10. **Terms:** I stated that the free sample is covered by the data licence.
 11. **PHP 8.5** (newest offered); CI tests on PHP 8.2.
 
+## Update 2026-11-15: website recreated as PHP, auto-deploy on
+
+- Form data was backed up first with the new `export` maintenance job: there were no submissions to keep.
+- Deleted the Node.js website entry and recreated `lodgingeo.com` as a regular website (type `other`). The database `u742794872_lodgingeo`, the SSL certificate (active, HTTPS redirect on) and the CDN were kept.
+- `hosting_deploy` from `ahmedmaher1/lodgingeo` `main` with auto-deploy enabled; PHP set to 8.5; server config re-uploaded; cache cleared.
+- `php tests/live_check.php`: 111 passed, 0 failed. `/.git/config` (left by Git deploys) returns 403.
+- SPF updated to `v=spf1 ip4:46.202.183.201 ip6:2a02:4780:2b:1949:0:2c46:2678:11 include:_spf.mail.hostinger.com include:_spf.google.com ~all`. It now authorises Google Workspace and this server's own addresses, which send the site's `mail()` messages.
+
 ## What I need from you
 
-1. **Email (stop point 2).** Choose one:
-   - Google Workspace (your MX is Google): create an app password for maher@lodgingeo.com, then I set `MAIL_TRANSPORT = smtp`, `SMTP_HOST = smtp.gmail.com`, port 465. Also add `include:_spf.google.com` to the SPF record.
-   - Or buy or enable Hostinger email for lodgingeo.com and give me the mailbox password. MX would then have to move to Hostinger, so only do this if you are leaving Google.
-
-   Until then, `mail()` messages from the web server may land in spam. Please check the spam folder for the six launch-test emails.
-2. **Switch the site to PHP Git auto-deploy.** In hPanel → Websites → lodgingeo.com, change the website from Node.js to a regular PHP site, or tell me to delete and recreate the website entry (the database and config are kept separately). Then I connect Git auto-deploy for `main`.
-3. **Search Console.** Add a Domain property for `lodgingeo.com` and send me the TXT value; I will add it through Hostinger DNS. Then submit `https://lodgingeo.com/sitemap.xml` and request indexing for `/`, `/hotel-database-sample/` and `/data/`. Check the "Not found (404)" report after a few weeks and send me any old URLs, so I can add them to `data/redirects.csv`.
-4. **Bing Webmaster Tools:** import from Search Console.
-5. **Phase B:** attach the final sample workbook and ask me to run §17.
-6. **Optional:** create the `pre-rebuild-2026-11` tag on GitHub from branch `archive/pre-rebuild-2026-11`.
-7. Review this report and reply with any corrections.
+1. **Email:** create a Google app password for maher@lodgingeo.com (Google Account → Security → 2-Step Verification → App passwords) and send it to me. I will switch the site to Google SMTP and test delivery. Until then, check the spam folder for site emails.
+2. **Search Console:** go to search.google.com/search-console, choose **Add property → Domain**, enter `lodgingeo.com` and send me the TXT value it shows. I will add it to DNS. Once verified, submit `https://lodgingeo.com/sitemap.xml` and request indexing for `/`, `/hotel-database-sample/` and `/data/`.
+3. **Bing Webmaster Tools:** at bing.com/webmasters, sign in and choose **Import from Google Search Console** (after step 2).
+4. **Phase B:** attach the final sample workbook and ask me to run §17.
+5. Review this report and reply with any corrections.
