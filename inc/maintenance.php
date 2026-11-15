@@ -7,6 +7,8 @@
  * and writes the result to storage/maintenance-report.json (denied over HTTP).
  *
  *   {"lookup": ["a@example.com"], "erase": ["a@example.com"], "error_log_tail": 50, "clear_report": false}
+ *   {"export": true}                         full backup of leads and messages into the report
+ *   {"import": {"leads": [...], "messages": [...]}}   restore rows from an export (ids are reassigned)
  */
 declare(strict_types=1);
 
@@ -46,6 +48,30 @@ function run_maintenance(): void
         $c->execute(['email', email_key($email)]);
         $report['erased'][$email] = ['leads' => $a->rowCount(), 'messages' => $b->rowCount(), 'rate_events' => $c->rowCount()];
     }
+    if (!empty($job['export'])) {
+        $report['export'] = [
+            'leads' => $pdo->query('SELECT * FROM leads ORDER BY id')->fetchAll(),
+            'messages' => $pdo->query('SELECT * FROM messages ORDER BY id')->fetchAll(),
+        ];
+    }
+    if (isset($job['import']) && is_array($job['import'])) {
+        $report['imported'] = [];
+        foreach (['leads', 'messages'] as $table) {
+            $cols = maintenance_columns($table);
+            $count = 0;
+            foreach ((array) ($job['import'][$table] ?? []) as $row) {
+                $row = array_intersect_key((array) $row, array_flip($cols));
+                if (!$row) {
+                    continue;
+                }
+                $names = array_keys($row);
+                $sql = 'INSERT INTO ' . $table . ' (' . implode(',', $names) . ') VALUES (' . implode(',', array_fill(0, count($names), '?')) . ')';
+                $pdo->prepare($sql)->execute(array_values($row));
+                $count++;
+            }
+            $report['imported'][$table] = $count;
+        }
+    }
     $n = (int) ($job['error_log_tail'] ?? 0);
     if ($n > 0) {
         $log = (string) cfg('ERROR_LOG', '');
@@ -53,4 +79,15 @@ function run_maintenance(): void
         $report['error_log_tail'] = array_slice($lines, -min($n, 200));
     }
     @file_put_contents($reportFile, json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n", LOCK_EX);
+}
+
+/** Columns that may be restored (never the id). */
+function maintenance_columns(string $table): array
+{
+    return $table === 'leads'
+        ? ['created_at', 'name', 'email', 'email_domain', 'is_free_email', 'company', 'countries', 'marketing_opt_in', 'source_page',
+           'landing_page', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'ip_hash', 'user_agent', 'token',
+           'token_expires_at', 'download_count', 'first_downloaded_at', 'last_downloaded_at']
+        : ['created_at', 'form', 'name', 'email', 'company', 'countries', 'data_needed', 'format', 'frequency', 'message', 'source_page',
+           'landing_page', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'ip_hash', 'user_agent'];
 }

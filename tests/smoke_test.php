@@ -350,5 +350,20 @@ ok(count_rows('messages') === 1, 'erased message is gone');
 [$st] = req('GET', '/.lodgingeo-maintenance.json');
 ok(in_array($st, [403, 404], true), 'maintenance job path is denied');
 
+// Backup and restore.
+file_put_contents("$tmp/job.json", json_encode(['export' => true]));
+req('GET', '/faq/');
+$exp = json_decode((string) @file_get_contents("$tmp/report.json"), true)['export'] ?? [];
+$nLeads = count_rows('leads');
+$nMsgs = count_rows('messages');
+ok(count($exp['leads'] ?? []) === $nLeads && count($exp['messages'] ?? []) === $nMsgs, 'maintenance export returns every lead and message');
+pdo()->exec('DELETE FROM leads');
+pdo()->exec('DELETE FROM messages');
+file_put_contents("$tmp/job.json", json_encode(['import' => $exp]));
+req('GET', '/faq/');
+ok(count_rows('leads') === $nLeads && count_rows('messages') === $nMsgs, 'maintenance import restores every row');
+$restored = pdo()->query("SELECT token FROM leads WHERE email='ready@example.com'")->fetchColumn();
+ok($restored === $tok2, 'restored lead keeps its download token');
+
 echo "\n$passes passed, $fails failed\n";
 exit($fails > 0 ? 1 : 0);
