@@ -1,0 +1,157 @@
+{
+ "total": 97,
+ "source": "Location Drive field reference (Appendix D)",
+ "groups": [
+  {
+   "name": "Core",
+   "fields": [
+    "id",
+    "place_id",
+    "cid",
+    "knowledge_graph_id",
+    "name",
+    "name_alt",
+    "place_type",
+    "category",
+    "categories",
+    "description",
+    "status",
+    "is_claimed",
+    "latitude",
+    "longitude",
+    "geohash4",
+    "geohash6",
+    "h3",
+    "plus_code",
+    "street_address",
+    "city",
+    "neighborhood",
+    "state",
+    "region",
+    "postal_code",
+    "country_name",
+    "country_code",
+    "formatted_address",
+    "parent_name",
+    "parent_id",
+    "phone",
+    "phone_local",
+    "website",
+    "domain",
+    "google_maps_url",
+    "rating",
+    "review_count",
+    "price_range",
+    "price_level",
+    "opening_hours",
+    "hours_confirmed",
+    "timezone",
+    "utc_offset_minutes",
+    "languages",
+    "photo_cover_url",
+    "logo_url",
+    "brand"
+   ]
+  },
+  {
+   "name": "Advanced",
+   "fields": [
+    "amenities",
+    "attributes",
+    "popular_times",
+    "typical_time_spent",
+    "rating_distribution",
+    "wikipedia_url",
+    "menu_url",
+    "reservation_url",
+    "order_url",
+    "booking_url",
+    "polygon_source",
+    "polygon_area_m2",
+    "grade_letter",
+    "grade_score",
+    "grade_flags",
+    "building_dist_m"
+   ]
+  },
+  {
+   "name": "Premium \u00b7 Hospitality",
+   "fields": [
+    "hotel_details",
+    "hotel_price",
+    "hotel_class",
+    "check_in_time",
+    "check_out_time"
+   ]
+  },
+  {
+   "name": "Premium \u00b7 Review intelligence",
+   "fields": [
+    "reviews",
+    "historical_reviews",
+    "review_sentiments"
+   ]
+  },
+  {
+   "name": "Premium \u00b7 EV charging",
+   "fields": [
+    "ev_connectors",
+    "ev_connector_types",
+    "ev_network",
+    "ev_max_power_kw",
+    "ev_plug_count",
+    "ev_stall_count",
+    "ev_speed",
+    "ev_station_name",
+    "ev_station_cid"
+   ]
+  },
+  {
+   "name": "Premium \u00b7 Fuel",
+   "fields": [
+    "fuel_types",
+    "fuel_price"
+   ]
+  },
+  {
+   "name": "Premium \u00b7 Dining",
+   "fields": [
+    "menu_items"
+   ]
+  },
+  {
+   "name": "Added in v8",
+   "fields": [
+    "photo_urls",
+    "photo_dates",
+    "streetview_date",
+    "menu_photo_url",
+    "similar_places",
+    "similar_places_ids",
+    "contained_places",
+    "contained_places_ids",
+    "building_name",
+    "floor_level",
+    "area_type",
+    "oldest_seen_date",
+    "price_reported",
+    "hotel_search_url",
+    "trip_url"
+   ]
+  },
+  {
+   "name": "Lodgingeo contact enrichment",
+   "fields": [
+    "email",
+    "whatsapp",
+    "facebook_url",
+    "instagram_url",
+    "linkedin_url",
+    "x_url",
+    "tiktok_url",
+    "youtube_url"
+   ],
+   "lodgingeo": true
+  }
+ ]
+}

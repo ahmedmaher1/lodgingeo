@@ -1,0 +1,85 @@
+{
+ "items": [
+  {
+   "q": "How many hotels are in the database?",
+   "home": true,
+   "a": "The database lists 5.8 million places to stay in 250 countries and territories, including 2.6 million hotels. The rest are resorts, apartments, guesthouses, hostels and other lodging. See <a href=\"/coverage/\">coverage</a>."
+  },
+  {
+   "q": "Which countries are covered?",
+   "a": "Coverage is worldwide: 250 countries and territories. The data is one global dataset that we deliver worldwide or for the countries you choose. The free sample contains hotels from 32 countries."
+  },
+  {
+   "q": "How often is the data updated?",
+   "home": true,
+   "a": "Monthly. Every release since January 2025 is kept, so each hotel has a month-by-month history. The latest release is 2026-10. See the <a href=\"/releases/\">release log</a>."
+  },
+  {
+   "q": "How fresh are the prices?",
+   "a": "Nightly offers are captured each month for every release. Rates are indicative nightly offers captured for the search dates at the time of capture, not contracted rates."
+  },
+  {
+   "q": "Which file formats do you deliver?",
+   "home": true,
+   "a": "CSV, Excel (.xlsx) or a shared Google Sheet, one file per country or one worldwide file. Large extracts ship as CSV. Building polygons come as a WKT text column. See <a href=\"/formats-and-delivery/\">formats and delivery</a>."
+  },
+  {
+   "q": "How is the data delivered?",
+   "a": "As a download link for the CSV or Excel files, or as a Google Sheet shared with you. Monthly subscriptions receive each new release with a file of the changes since the previous month."
+  },
+  {
+   "q": "Where does the data come from?",
+   "a": "From publicly available web listings and booking sites, with prices captured monthly. Building footprints come from OpenStreetMap and Overture Maps, matched to each hotel's point. See the <a href=\"/methodology/\">methodology</a>."
+  },
+  {
+   "q": "Are hotel email addresses included?",
+   "a": "Publicly listed business email addresses, found on the hotel's own website and official pages, are part of the full dataset. The <a href=\"/data-dictionary/\">data dictionary</a> shows which contact fields the current sample contains."
+  },
+  {
+   "q": "Are WhatsApp numbers and social profiles included?",
+   "a": "Yes, in the full dataset, where the property publishes a WhatsApp number or link, and Facebook, Instagram, LinkedIn, X, TikTok or YouTube profiles. See <a href=\"/data/hotel-contact-data/\">contact details</a>."
+  },
+  {
+   "q": "Which coordinate system do the building polygons use?",
+   "a": "WGS84 (EPSG:4326). Each footprint is a MULTIPOLYGON in WKT in the building_polygon_wkt column, with its area in square metres and a match grade from A to E."
+  },
+  {
+   "q": "What do the polygon grades A to E mean?",
+   "a": "The grade is the confidence that the building matches the hotel: A is the highest and E the lowest. We recommend grades A and B for automated use and a manual review for C to E."
+  },
+  {
+   "q": "Can I buy a single country?",
+   "home": true,
+   "a": "Yes. You can order one country, several countries or the whole world, as a one-off file or as monthly updates. <a href=\"/contact/\">Tell us the countries</a> and we will send counts and a quote."
+  },
+  {
+   "q": "Can you match our own hotel list?",
+   "a": "Yes. Send your list with your ID, hotel name, city and country, and we return our ID, coordinates and every fact, with a match tier for each row. See <a href=\"/hotel-matching/\">hotel list matching</a>."
+  },
+  {
+   "q": "What does the free sample contain?",
+   "home": true,
+   "a": "One Excel file with 250 hotels in 32 countries and 207 columns, a column guide with 76 definitions, 1,915 monthly change records, nearby-place counts by category and 215 building polygons. <a href=\"/hotel-database-sample/\">Download the sample</a>."
+  },
+  {
+   "q": "Which booking sites are covered?",
+   "a": "A fixed list of known booking sites: online travel agencies, metasearch sites and other booking sites. The 250 sample hotels were offered on 105 distinct sites. Lodgingeo is not affiliated with the booking sites listed."
+  },
+  {
+   "q": "How do I get a quote?",
+   "a": "Email maher@lodgingeo.com or use the <a href=\"/contact/\">contact form</a> with the countries, fields and format you need and whether it is one-off or monthly. We do not publish prices; quotes go by email. We reply within 24 hours."
+  },
+  {
+   "q": "Is there a history of changes?",
+   "a": "Yes. Each monthly release is compared with the previous one, and every change is recorded: new listings, closures, reopenings and changed fields. A place missing from one release is treated as a data gap, not a closure."
+  },
+  {
+   "q": "How is the data licensed?",
+   "a": "Data is licensed, not sold: you may use it for your own internal business purposes, including lawful outreach and aggregated statistics, but you may not resell or republish it. The full text is in the <a href=\"/terms/#data-licence\">data licence</a>."
+  },
+  {
+   "q": "Is the contact data GDPR compliant?",
+   "a": "Contact fields are business details as published by the properties themselves. You are responsible for using them lawfully under GDPR/ePrivacy, CAN-SPAM and local rules. We remove any record on request."
+  }
+ ]
+}
