@@ -1,0 +1,956 @@
+{
+ "interim": true,
+ "note": "Seeded from the field-group reference; Phase B lists every column of every sheet.",
+ "sheets": [
+  {
+   "name": "Hotels",
+   "rows": 250,
+   "columns_total": 207,
+   "columns": [
+    {
+     "name": "product_id",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "hotel_name",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "city",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "country",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "country_code",
+     "group": "Match & IDs",
+     "meaning": "ISO 3166-1 alpha-2 country code.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_id",
+     "group": "Match & IDs",
+     "meaning": "Lodgingeo place ID; stable across monthly releases.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_name",
+     "group": "Match & IDs",
+     "meaning": "Name of the matched Lodgingeo place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_name_alt",
+     "group": "Match & IDs",
+     "meaning": "Alternative name of the matched place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_city",
+     "group": "Match & IDs",
+     "meaning": "City of the matched place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_address",
+     "group": "Match & IDs",
+     "meaning": "Address of the matched place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "ld_category",
+     "group": "Match & IDs",
+     "meaning": "Category of the matched place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "name_score",
+     "group": "Match & IDs",
+     "meaning": "Name similarity between your record and the match, 0–100.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "city_score",
+     "group": "Match & IDs",
+     "meaning": "City similarity between your record and the match, 0–100.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "confidence",
+     "group": "Match & IDs",
+     "meaning": "Match confidence: 70% name score, 30% city score, plus a small bonus for places typed as hotels.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "match_tier",
+     "group": "Match & IDs",
+     "meaning": "high, medium, low or no_match, derived from confidence.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "second_candidate_name",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "second_candidate_confidence",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "closest_candidate_name",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "closest_candidate_confidence",
+     "group": "Match & IDs",
+     "meaning": null,
+     "example": null,
+     "fill": null,
+     "private": true
+    },
+    {
+     "name": "flags",
+     "group": "Match & IDs",
+     "meaning": "Notes on the match, such as a close second candidate.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_ld_id",
+     "group": "Match & IDs",
+     "meaning": "Lodgingeo ID of the hotel used for all fact columns.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "latitude",
+     "group": "Location & address",
+     "meaning": "Latitude, WGS84 decimal degrees.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "longitude",
+     "group": "Location & address",
+     "meaning": "Longitude, WGS84 decimal degrees.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "name",
+     "group": "Location & address",
+     "meaning": "Property name.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "name_alt",
+     "group": "Location & address",
+     "meaning": "Alternative or local-language name.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "parent_name",
+     "group": "Location & address",
+     "meaning": "Parent place or property group, where listed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "street_address",
+     "group": "Location & address",
+     "meaning": "Street and number.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "neighborhood",
+     "group": "Location & address",
+     "meaning": "Neighbourhood or district.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "state",
+     "group": "Location & address",
+     "meaning": "State, province or region.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "postal_code",
+     "group": "Location & address",
+     "meaning": "Postal code.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "country_name",
+     "group": "Location & address",
+     "meaning": "Country name.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "formatted_address",
+     "group": "Location & address",
+     "meaning": "Full address on one line.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "timezone",
+     "group": "Location & address",
+     "meaning": "IANA time zone, e.g. Europe/Madrid.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "phone",
+     "group": "Contacts & identity",
+     "meaning": "Phone number in international format.",
+     "example": null,
+     "fill": 220,
+     "private": false
+    },
+    {
+     "name": "website",
+     "group": "Contacts & identity",
+     "meaning": "Website URL as published by the property.",
+     "example": null,
+     "fill": 217,
+     "private": false
+    },
+    {
+     "name": "domain",
+     "group": "Contacts & identity",
+     "meaning": "Website domain without protocol or path.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "chain_from_website",
+     "group": "Contacts & identity",
+     "meaning": "Chain or group detected from the website.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "brand",
+     "group": "Contacts & identity",
+     "meaning": "Hotel brand, where known.",
+     "example": null,
+     "fill": 30,
+     "private": false
+    },
+    {
+     "name": "wikipedia_url",
+     "group": "Contacts & identity",
+     "meaning": "Wikipedia article, where one exists.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "category",
+     "group": "Hotel details & amenities",
+     "meaning": "Primary category of the place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "categories",
+     "group": "Hotel details & amenities",
+     "meaning": "All categories of the place.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "status",
+     "group": "Hotel details & amenities",
+     "meaning": "Operating status in the latest release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_class",
+     "group": "Hotel details & amenities",
+     "meaning": "Star class (1–5), where listed.",
+     "example": null,
+     "fill": 193,
+     "private": false
+    },
+    {
+     "name": "rating",
+     "group": "Hotel details & amenities",
+     "meaning": "Average guest rating.",
+     "example": null,
+     "fill": 227,
+     "private": false
+    },
+    {
+     "name": "review_count",
+     "group": "Hotel details & amenities",
+     "meaning": "Number of guest reviews.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "rating_distribution",
+     "group": "Hotel details & amenities",
+     "meaning": "Count of reviews per star level.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "price_level",
+     "group": "Hotel details & amenities",
+     "meaning": "Relative price level, where listed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "check_in_time",
+     "group": "Hotel details & amenities",
+     "meaning": "Check-in time.",
+     "example": null,
+     "fill": 159,
+     "private": false
+    },
+    {
+     "name": "check_out_time",
+     "group": "Hotel details & amenities",
+     "meaning": "Check-out time.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "amenities",
+     "group": "Hotel details & amenities",
+     "meaning": "Amenities listed as available.",
+     "example": null,
+     "fill": 210,
+     "private": false
+    },
+    {
+     "name": "amenities_unavailable",
+     "group": "Hotel details & amenities",
+     "meaning": "Amenities listed as not available.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "attributes",
+     "group": "Hotel details & amenities",
+     "meaning": "Other listed attributes.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "languages",
+     "group": "Hotel details & amenities",
+     "meaning": "Languages spoken, where listed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "floor_level",
+     "group": "Hotel details & amenities",
+     "meaning": "Floor level of the place inside its building, where known.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "area_type",
+     "group": "Hotel details & amenities",
+     "meaning": "Type of area around the place, where known.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_rate_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Headline nightly rate in the latest release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_rates_by_site",
+     "group": "Prices & booking sites",
+     "meaning": "Nightly offer per booking site in the latest release.",
+     "example": null,
+     "fill": 209,
+     "private": false
+    },
+    {
+     "name": "booking_sites_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Booking sites offering the hotel in the latest release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "booking_otas_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Online travel agencies among those sites.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "booking_metasearch_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Metasearch sites among those sites.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "booking_other_sites_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Other booking sites among those sites.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "lowest_offer_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Lowest nightly offer across sites in the latest release.",
+     "example": null,
+     "fill": 209,
+     "private": false
+    },
+    {
+     "name": "direct_offer_latest",
+     "group": "Prices & booking sites",
+     "meaning": "Offer on the hotel's own website, where shown.",
+     "example": null,
+     "fill": 135,
+     "private": false
+    },
+    {
+     "name": "direct_vs_lowest_ota_pct",
+     "group": "Prices & booking sites",
+     "meaning": "Direct offer compared with the lowest OTA offer, in percent (positive: direct is higher).",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "booking_sites_months_seen",
+     "group": "Prices & booking sites",
+     "meaning": "Months in which each booking site listed the hotel.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "rate_history_by_month",
+     "group": "Prices & booking sites",
+     "meaning": "Headline nightly rate per monthly release.",
+     "example": null,
+     "fill": 229,
+     "private": false
+    },
+    {
+     "name": "hotel_avg_rate_2025",
+     "group": "Prices & booking sites",
+     "meaning": "Average of the monthly rates captured in 2025.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_avg_rate_2026",
+     "group": "Prices & booking sites",
+     "meaning": "Average of the monthly rates captured in 2026.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "places_inside_building",
+     "group": "Building polygon",
+     "meaning": "Number of other places located inside the same building.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "contained_places_categories",
+     "group": "Building polygon",
+     "meaning": "Categories of the places inside the building.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_id",
+     "group": "Building polygon",
+     "meaning": "Building identifier from the source dataset.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_name",
+     "group": "Building polygon",
+     "meaning": "Building name, where the source has one.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "polygon_source",
+     "group": "Building polygon",
+     "meaning": "How the footprint was matched: overture_contains, osm_name or overture_nearest.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_area_m2",
+     "group": "Building polygon",
+     "meaning": "Footprint area in square metres.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_polygon_wkt",
+     "group": "Building polygon",
+     "meaning": "Building footprint as a WKT MULTIPOLYGON in WGS84 (EPSG:4326).",
+     "example": null,
+     "fill": 215,
+     "private": false
+    },
+    {
+     "name": "building_match_grade",
+     "group": "Building polygon",
+     "meaning": "Match confidence grade, A (highest) to E (lowest).",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_match_score",
+     "group": "Building polygon",
+     "meaning": "Numeric match score behind the grade.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_dist_m",
+     "group": "Building polygon",
+     "meaning": "Distance from the hotel point to the building, in metres (0 when inside).",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_osm_id",
+     "group": "Building polygon",
+     "meaning": "OpenStreetMap ID of the building, where matched by name.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "building_osm_name",
+     "group": "Building polygon",
+     "meaning": "OpenStreetMap name of the building.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "oldest_seen_date",
+     "group": "History & changes",
+     "meaning": "Earliest date the place is known to have been listed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "first_seen_month",
+     "group": "History & changes",
+     "meaning": "First monthly release containing the hotel.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "last_seen_month",
+     "group": "History & changes",
+     "meaning": "Latest monthly release containing the hotel.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "last_confirmed_month",
+     "group": "History & changes",
+     "meaning": "Latest release in which the hotel was confirmed operating.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "closed_month",
+     "group": "History & changes",
+     "meaning": "Release in which the hotel was first marked closed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "continuity_months",
+     "group": "History & changes",
+     "meaning": "Number of monthly releases containing the hotel.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "lifecycle_stage",
+     "group": "History & changes",
+     "meaning": "Lifecycle stage derived from the monthly history.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "rating_first",
+     "group": "History & changes",
+     "meaning": "Rating in the first release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "rating_latest",
+     "group": "History & changes",
+     "meaning": "Rating in the latest release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "rating_trend_12m",
+     "group": "History & changes",
+     "meaning": "Change in rating over the last 12 months.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "reviews_gained_last_month",
+     "group": "History & changes",
+     "meaning": "Reviews added since the previous release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "reviews_gained_all_time",
+     "group": "History & changes",
+     "meaning": "Reviews added since the hotel was first seen.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "review_velocity_3m",
+     "group": "History & changes",
+     "meaning": "Average reviews gained per month over the last 3 months.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "status_history",
+     "group": "History & changes",
+     "meaning": "Operating status by month.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "name_history",
+     "group": "History & changes",
+     "meaning": "Previous names with the month they changed.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "facts_change_timeline",
+     "group": "History & changes",
+     "meaning": "Month-by-month list of changed facts.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "facts_changes_total",
+     "group": "History & changes",
+     "meaning": "Total number of fact changes since the first release.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_rating_change_2025",
+     "group": "History & changes",
+     "meaning": "Rating change during 2025.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_reviews_gained_2025",
+     "group": "History & changes",
+     "meaning": "Reviews gained during 2025.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_facts_changes_2025",
+     "group": "History & changes",
+     "meaning": "Fact changes during 2025.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_rating_change_2026",
+     "group": "History & changes",
+     "meaning": "Rating change during 2026.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_reviews_gained_2026",
+     "group": "History & changes",
+     "meaning": "Reviews gained during 2026.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "hotel_facts_changes_2026",
+     "group": "History & changes",
+     "meaning": "Fact changes during 2026.",
+     "example": null,
+     "fill": null,
+     "private": false
+    },
+    {
+     "name": "amenities_added",
+     "group": "History & changes",
+     "meaning": "Amenities added since the previous release (also amenities_removed, attributes_added/removed, languages_added/removed).",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "nearest_<service>",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Name of the nearest place of a service type, e.g. nearest_pharmacy; nearest_<service>_m gives the distance in metres.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "count_<group>_3km",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Number of open places of a category group within 3 km.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "places_within_500m",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Open places within 500 m (also places_within_1km and places_within_3km).",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "nearby_lodging_*",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Other places to stay nearby: the competitive set.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "nearby_openings_*",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Places that opened nearby, by period.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "nearby_closures_*",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Places that closed nearby, by period.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "neighbourhood_momentum_12m",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Balance of openings and closures nearby over 12 months.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "possible_replacements",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Places that may have replaced a closed place at the same spot.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    },
+    {
+     "name": "stable_recommendations_*",
+     "group": "Neighbourhood (within 3 km)",
+     "meaning": "Nearby places that stay highly rated across releases.",
+     "example": null,
+     "fill": null,
+     "private": false,
+     "pattern": true
+    }
+   ],
+   "description": "One row per hotel: match columns, then every fact column."
+  },
+  {
+   "name": "Column guide",
+   "rows": 76,
+   "columns_total": 3,
+   "columns": [],
+   "description": "Definitions: file, column, meaning."
+  },
+  {
+   "name": "Hotel changes",
+   "rows": 1915,
+   "columns_total": 12,
+   "columns": [],
+   "description": "Monthly changes 2025-02 to 2026-10."
+  },
+  {
+   "name": "Category counts",
+   "rows": 201158,
+   "columns_total": 6,
+   "columns": [],
+   "description": "Open places within 500 m, 1 km and 3 km of each hotel, per category."
+  },
+  {
+   "name": "Buildings",
+   "rows": 215,
+   "columns_total": 14,
+   "columns": [],
+   "description": "Building footprint per hotel: ID, name, source, area, grade, score, distance, OSM ID, polygon WKT."
+  }
+ ]
+}

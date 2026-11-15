@@ -1,0 +1,21 @@
+# Lodgingeo
+
+> Lodgingeo is the hotel-data service of Location Drive: a global database of 5.8 million places to stay, including 2.6 million hotels, in 250 countries and territories. Each record has coordinates and address, publicly listed contact details, nightly rates across booking sites, a building polygon, neighbourhood context and monthly change history since January 2025. Data is delivered as CSV, Excel or a shared Google Sheet, per country or worldwide, updated monthly. Quotes are by email; no prices are published.
+
+## Key pages
+
+- [Global hotels database](https://lodgingeo.com/): overview and fact box
+- [Free hotel data sample (Excel)](https://lodgingeo.com/hotel-database-sample/): 250 hotels, 32 countries
+- [Hotel data overview](https://lodgingeo.com/data/): the eight field groups
+- [Data dictionary](https://lodgingeo.com/data-dictionary/): every column with its meaning
+- [Contact details](https://lodgingeo.com/data/hotel-contact-data/)
+- [Prices by booking site](https://lodgingeo.com/data/hotel-prices-by-booking-site/)
+- [Building polygons](https://lodgingeo.com/data/hotel-building-polygons/)
+- [Location and neighbourhood](https://lodgingeo.com/data/hotel-location-data/)
+- [Details and amenities](https://lodgingeo.com/data/hotel-details-and-amenities/)
+- [History and changes](https://lodgingeo.com/data/hotel-history-and-changes/)
+- [Hotel list matching](https://lodgingeo.com/hotel-matching/)
+- [Coverage](https://lodgingeo.com/coverage/)
+- [Methodology and attribution](https://lodgingeo.com/methodology/)
+- [FAQ](https://lodgingeo.com/faq/)
+- [Contact](https://lodgingeo.com/contact/): maher@lodgingeo.com

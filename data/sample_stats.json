@@ -1,0 +1,371 @@
+{
+ "interim": true,
+ "file_size_bytes": null,
+ "format": "xlsx",
+ "release": "2026-10",
+ "sheets": {
+  "Hotels": {
+   "rows": 250,
+   "columns": 207
+  },
+  "Column guide": {
+   "rows": 76,
+   "columns": 3
+  },
+  "Hotel changes": {
+   "rows": 1915,
+   "columns": 12
+  },
+  "Category counts": {
+   "rows": 201158,
+   "columns": 6
+  },
+  "Buildings": {
+   "rows": 215,
+   "columns": 14
+  }
+ },
+ "countries": {
+  "count": 32,
+  "all": null,
+  "top": [
+   [
+    "Spain",
+    41
+   ],
+   [
+    "Greece",
+    32
+   ],
+   [
+    "Germany",
+    23
+   ],
+   [
+    "Austria",
+    16
+   ],
+   [
+    "Italy",
+    16
+   ],
+   [
+    "Egypt",
+    15
+   ],
+   [
+    "Mexico",
+    12
+   ],
+   [
+    "United States",
+    12
+   ],
+   [
+    "Portugal",
+    10
+   ],
+   [
+    "Dominican Republic",
+    10
+   ]
+  ]
+ },
+ "cities": {
+  "count": 190
+ },
+ "fill": {
+  "total": 250,
+  "fields": {
+   "phone": 220,
+   "website": 217,
+   "rating": 227,
+   "rate_history_by_month": 229,
+   "building_polygon_wkt": 215,
+   "amenities": 210,
+   "hotel_rates_by_site": 209,
+   "lowest_offer_latest": 209,
+   "hotel_class": 193,
+   "check_in_time": 159,
+   "direct_offer_latest": 135,
+   "brand": 30
+  }
+ },
+ "booking_sites": {
+  "distinct": 105,
+  "median_per_hotel": 22,
+  "max_per_hotel": 42,
+  "by_type": {
+   "ota": {
+    "count": 29,
+    "sites": [
+     [
+      "Booking.com",
+      null
+     ],
+     [
+      "Hotels.com",
+      null
+     ],
+     [
+      "Expedia",
+      null
+     ],
+     [
+      "Super.com",
+      null
+     ],
+     [
+      "CheapTickets",
+      null
+     ],
+     [
+      "Priceline",
+      null
+     ],
+     [
+      "Orbitz",
+      null
+     ],
+     [
+      "Travelocity",
+      null
+     ],
+     [
+      "eDreams",
+      null
+     ],
+     [
+      "Reserving",
+      null
+     ],
+     [
+      "Agoda",
+      null
+     ],
+     [
+      "Etrip",
+      null
+     ],
+     [
+      "Trip.com",
+      null
+     ],
+     [
+      "muv",
+      null
+     ],
+     [
+      "TravelUp",
+      null
+     ],
+     [
+      "Stayforlong",
+      null
+     ],
+     [
+      "Clicktrip",
+      null
+     ],
+     [
+      "Evendo",
+      null
+     ],
+     [
+      "Tripening",
+      null
+     ],
+     [
+      "Traveluro",
+      null
+     ],
+     [
+      "ZenHotels",
+      null
+     ],
+     [
+      "Catchit",
+      null
+     ],
+     [
+      "ClosestHotel",
+      null
+     ],
+     [
+      "Traveloka",
+      null
+     ],
+     [
+      "Klook",
+      null
+     ]
+    ],
+    "partial": true
+   },
+   "metasearch": {
+    "count": 12,
+    "sites": [
+     [
+      "Bluepillow",
+      null
+     ],
+     [
+      "Vio.com",
+      null
+     ],
+     [
+      "goseek",
+      null
+     ],
+     [
+      "Wego",
+      null
+     ],
+     [
+      "KAYAK",
+      null
+     ],
+     [
+      "DealBase",
+      null
+     ],
+     [
+      "HotelsCombined",
+      null
+     ],
+     [
+      "Tripadvisor",
+      null
+     ],
+     [
+      "trivago",
+      null
+     ],
+     [
+      "momondo",
+      null
+     ],
+     [
+      "Kiwi.com",
+      null
+     ],
+     [
+      "HomeToGo",
+      null
+     ]
+    ]
+   },
+   "other": {
+    "count": null,
+    "sites": [
+     [
+      "Amimir.com",
+      null
+     ],
+     [
+      "Qantas Hotels",
+      null
+     ],
+     [
+      "Billabook.com",
+      null
+     ],
+     [
+      "BusinessHotels.com",
+      null
+     ],
+     [
+      "Hotel prive",
+      null
+     ],
+     [
+      "Luxury Escapes",
+      null
+     ],
+     [
+      "lastminute.com",
+      null
+     ],
+     [
+      "Long Stay Discounts",
+      null
+     ],
+     [
+      "EaseMyTrip.com",
+      null
+     ],
+     [
+      "CHECK24.de",
+      null
+     ]
+    ],
+    "partial": true
+   }
+  }
+ },
+ "direct_vs_ota": {
+  "hotels_with_direct": 135,
+  "above_lowest_ota_pct": 63,
+  "median_gap_pct": 5
+ },
+ "polygon_grades": {
+  "A": 154,
+  "B": 24,
+  "C": 14,
+  "D": 17,
+  "E": 6,
+  "none": 35
+ },
+ "polygon_sources": {
+  "overture_contains": 102,
+  "osm_name": 76,
+  "overture_nearest": 37
+ },
+ "polygon_median_area_m2": 946,
+ "hotel_class": {
+  "4": 91,
+  "3": 49,
+  "5": 45,
+  "2": 7,
+  "1": 1,
+  "none": 57
+ },
+ "match_tiers": {
+  "high": 193,
+  "medium": 36,
+  "low": 16,
+  "no_match": 5
+ },
+ "changes": {
+  "total": 1915,
+  "types": {
+   "field_changed": 1628,
+   "field_added": 273,
+   "first_listed": 10,
+   "reopened": 2,
+   "closed": 2
+  },
+  "top_fields": [
+   [
+    "amenities",
+    623
+   ],
+   [
+    "website",
+    337
+   ],
+   [
+    "rating",
+    253
+   ]
+  ],
+  "per_month": {}
+ },
+ "category_counts": {
+  "rows": 201158,
+  "distinct_categories": 14230
+ },
+ "column_guide": {
+  "definitions": 76
+ }
+}
