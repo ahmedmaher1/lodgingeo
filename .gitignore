@@ -1,5 +1,11 @@
-node_modules/
+# Server-only config and runtime files never go in Git.
+lodgingeo-config.php
+.lodgingeo-config.incoming.php
 .env
 .env.*
-npm-debug.log*
+*.sqlite
+*.log
+/storage/samples/*.tmp
+__pycache__/
+node_modules/
 .DS_Store
