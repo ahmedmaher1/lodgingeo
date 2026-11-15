@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /download/
+Disallow: /sample-request/
+Disallow: /contact-submit/
+Disallow: /whatsapp/
+Disallow: /hotel-database-sample/thank-you/
+
+Sitemap: https://lodgingeo.com/sitemap.xml
