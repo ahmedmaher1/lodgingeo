@@ -59,15 +59,13 @@ python tools/build_data.py --check  # CI: fail if committed data/*.json are stal
 
 ## Deploy
 
-Branch → pull request → CI → merge to `main` → deploy → `php tests/live_check.php`.
-
-The Hostinger website was first created as a Node.js app, and Hostinger cannot switch a Node.js website to PHP Git auto-deploy through its API. Until the site type is changed in hPanel, `main` is deployed as an archive:
+Branch → pull request → CI → merge to `main`. Hostinger's Git auto-deploy (PHP website, branch `main`, document root) publishes every push to `main` to `public_html`. Then clear the cache (`hosting_cache_clear`) and run:
 
 ```bash
-git archive --format=zip -o site_$(date -u +%Y%m%d_%H%M%S).zip HEAD
+WA_DIGITS=<whatsapp digits> php tests/live_check.php
 ```
 
-Upload it as `public_html/site.zip` (Hostinger file upload, TUS) and run `hosting_websites_deploy-static-site-archive` with `archive_path: "site.zip"`, then clear the cache (`hosting_cache_clear`). The server config lives outside `public_html`, so deploys never touch it.
+The server config lives outside `public_html`, so deploys never touch it. To replace it, upload the new file as `public_html/.lodgingeo-config.incoming.php` (Hostinger file upload, TUS); the next request moves it one level up.
 
 ## Maintenance jobs
 

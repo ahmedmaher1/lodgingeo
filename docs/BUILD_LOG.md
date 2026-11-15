@@ -46,3 +46,8 @@ First run scored Accessibility 96 (`link-in-text-block`); fixed as noted above.
 - PR #3 added `tests/live_check.php` and the maintenance hook; redeployed by archive.
 - Live forms tested with `maher+test-*@lodgingeo.com`, rows verified and then erased; error log empty. IndexNow ping: HTTP 202.
 - Hostinger upload credentials expire within a few hours; generate new ones for each upload.
+
+### Website recreated as PHP (2026-11-15)
+- Backed up leads and messages with the new maintenance `export` job (both empty), deleted the Node.js website entry, recreated `lodgingeo.com` as a regular website on order 68992684. The database, SSL and CDN settings survived.
+- `hosting_deploy` (git, `main`, type static/PHP) with auto-deploy; PHP 8.5; config re-uploaded; live check 111/111.
+- SPF widened to include Google Workspace and the server's IPv4/IPv6 addresses.
