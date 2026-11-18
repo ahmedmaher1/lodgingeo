@@ -51,3 +51,9 @@ First run scored Accessibility 96 (`link-in-text-block`); fixed as noted above.
 - Backed up leads and messages with the new maintenance `export` job (both empty), deleted the Node.js website entry, recreated `lodgingeo.com` as a regular website on order 68992684. The database, SSL and CDN settings survived.
 - `hosting_deploy` (git, `main`, type static/PHP) with auto-deploy; PHP 8.5; config re-uploaded; live check 111/111.
 - SPF widened to include Google Workspace and the server's IPv4/IPv6 addresses.
+
+### Email and Search Console (2026-11-17)
+- Server config switched to `MAIL_TRANSPORT = smtp` (Google Workspace, `smtp.gmail.com:465`, app password). Uploaded as the incoming config; bootstrap replaced the previous file.
+- Live form test (sample + both contact forms) passed with 303s; test rows erased via the maintenance hook.
+- Search Console TXT record added at `@` together with the SPF record.
+- Hostinger connector sign-in expired during the error-log check; error log not yet read.
