@@ -32,7 +32,7 @@ Secrets live only on the server in `lodgingeo-config.php`, one level above `publ
     'ENV' => 'production',
     'DB_DSN' => 'mysql:host=localhost;dbname=…;charset=utf8mb4', 'DB_USER' => '…', 'DB_PASS' => '…',
     'MAIL_TRANSPORT' => 'smtp',            // smtp | mail | log
-    'SMTP_HOST' => 'smtp.hostinger.com', 'SMTP_PORT' => 465, 'SMTP_SECURE' => 'ssl', 'SMTP_USER' => '…', 'SMTP_PASS' => '…',
+    'SMTP_HOST' => 'smtp.gmail.com', 'SMTP_PORT' => 465, 'SMTP_SECURE' => 'ssl', 'SMTP_USER' => '…', 'SMTP_PASS' => '…',
     'OWNER_NOTIFY_EMAIL' => '…', 'WHATSAPP_NUMBER' => '…',
     'IP_SALT' => '…', 'APP_SECRET' => '…',
     'HSTS' => true, 'ERROR_LOG' => '/home/…/lodgingeo-error.log',

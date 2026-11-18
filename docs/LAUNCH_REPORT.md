@@ -93,10 +93,15 @@ Plus: http → https, www → apex, `/index.php` → `/`, trailing slash on ever
 - `php tests/live_check.php`: 111 passed, 0 failed. `/.git/config` (left by Git deploys) returns 403.
 - SPF updated to `v=spf1 ip4:46.202.183.201 ip6:2a02:4780:2b:1949:0:2c46:2678:11 include:_spf.mail.hostinger.com include:_spf.google.com ~all`. It now authorises Google Workspace and this server's own addresses, which send the site's `mail()` messages.
 
+## Update 2026-11-17: Google SMTP and Search Console
+
+- **Email:** the server config now sends through Google Workspace SMTP (`smtp.gmail.com`, SSL 465, user maher@lodgingeo.com, app password "Lodgingeo website"). The password lives only in the server config. A live test of the sample request and both contact forms (plus-addresses of maher@lodgingeo.com) completed with 303 redirects, and an erase job removed the test rows. The Hostinger connector then lost its sign-in, so the error-log check is still to do.
+- **Search Console:** TXT record `google-site-verification=3AF9Y6zhP3EytEKQHDpJU2u8b9pOPgsWh9uXeBRf-iA` added at `@`, alongside the SPF record (`dns_records_update` accepted).
+
 ## What I need from you
 
-1. **Email:** create a Google app password for maher@lodgingeo.com (Google Account → Security → 2-Step Verification → App passwords) and send it to me. I will switch the site to Google SMTP and test delivery. Until then, check the spam folder for site emails.
-2. **Search Console:** go to search.google.com/search-console, choose **Add property → Domain**, enter `lodgingeo.com` and send me the TXT value it shows. I will add it to DNS. Once verified, submit `https://lodgingeo.com/sitemap.xml` and request indexing for `/`, `/hotel-database-sample/` and `/data/`.
-3. **Bing Webmaster Tools:** at bing.com/webmasters, sign in and choose **Import from Google Search Console** (after step 2).
-4. **Phase B:** attach the final sample workbook and ask me to run §17.
-5. Review this report and reply with any corrections.
+1. **Check your inbox** for the six test emails sent on 2026-11-17 (subjects "Your Lodgingeo hotel data sample", "[Lodgingeo] Sample: Lodgingeo Live Test …", "[Lodgingeo] Contact: Lodgingeo Live Test …" ×2 and "We received your message · Lodgingeo" ×2). They should now arrive in the inbox, not spam.
+2. **Search Console:** click **Verify** on the Domain property (DNS can take up to an hour). Then go to **Sitemaps**, submit `https://lodgingeo.com/sitemap.xml`, and use **URL inspection → Request indexing** for `/`, `/hotel-database-sample/` and `/data/`.
+3. **Bing Webmaster Tools:** at bing.com/webmasters choose **Import from Google Search Console**.
+4. **Hostinger connector:** sign in again in your claude.ai connector settings so that I can read the server's error log and finish the email check.
+5. **Phase B:** send the final sample workbook when it is ready.
